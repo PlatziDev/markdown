@@ -17,8 +17,15 @@
   "author": {
     "name": "Platzi Team",
     "email": "cursos@platzi.com",
-    "url": "http://github.com/PlatziDev"
+    "url": "https://github.com/PlatziDev"
   },
+  "contributors": [
+    {
+      "name": "Sergio Daniel Xalambrí",
+      "email": "colo@platzi.com",
+      "url": "https://sergio.xalambri.xyz/"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/PlatziDev/markdown/issues"
