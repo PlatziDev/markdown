@@ -41,7 +41,7 @@ Lorem **ipsum** dolor _sit_ ++amet++ :D.
 
 The HTML ==specification== is maintained by the W3C.
 
-- `item 1`
+- \`item 1\`
 - item 2
 - item 3
 
@@ -52,11 +52,11 @@ Term 2
   ~ Definition 2a
   ~ Definition 2b
 
-```js
+\`\`\`js
 function greeting() {
 	return 'hello world!';
 }
-```
+\`\`\`
 
 @[youtube](ajLJOhf-WdA)
 ```
