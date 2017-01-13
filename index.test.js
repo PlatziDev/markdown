@@ -4,24 +4,26 @@ const createParser = require('./index.js');
 const parser = createParser();
 
 
-const markdown = `# heading 1
-## heading 2# Heading 1
-## Heading 2
-### Heading 3
-#### Heading 4
-##### Heading 5
-###### Heading 6
-**Lorem** _ipsum_ ++dolor++ [sit](https://platzi.com) amet.
+const markdown = `![Platzi Logo](https://static.platzi.com/static/images/logos/platzi@2x.png)
 
-![Platzi Logo](https://static.platzi.com/static/images/logos/platzi@2x.png)
+*[HTML]: Hyper Text Markup Language
+*[W3C]:  World Wide Web Consortium
+
+# Heading 1
+Lorem **ipsum** dolor _sit_ ++amet++.
+
+The HTML ==specification== is maintained by the W3C.
 
 - \`item 1\`
 - item 2
+- item 3
 
-1. item
-2. another item
+Term 1
+  ~ Definition 1
 
-> quote of text
+Term 2
+  ~ Definition 2a
+  ~ Definition 2b
 
 \`\`\`js
 function greeting() {
