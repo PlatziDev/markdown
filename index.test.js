@@ -10,7 +10,7 @@ const markdown = `![Platzi Logo](https://static.platzi.com/static/images/logos/p
 *[W3C]:  World Wide Web Consortium
 
 # Heading 1
-Lorem **ipsum** dolor _sit_ ++amet++.
+Lorem **ipsum** dolor _sit_ ++amet++ :D.
 
 The HTML ==specification== is maintained by the W3C.
 

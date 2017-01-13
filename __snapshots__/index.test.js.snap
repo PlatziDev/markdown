@@ -1,7 +1,7 @@
 exports[`test Platzi Flavored Markdown parser 1`] = `
 "<figure><img src=\"https://static.platzi.com/static/images/logos/platzi@2x.png\" alt=\"Platzi Logo\" /></figure>
 <h1>Heading 1</h1>
-<p>Lorem <strong>ipsum</strong> dolor <em>sit</em> <ins>amet</ins>.</p>
+<p>Lorem <strong>ipsum</strong> dolor <em>sit</em> <ins>amet</ins> 😄.</p>
 <p>The <abbr title=\"Hyper Text Markup Language\">HTML</abbr> <mark>specification</mark> is maintained by the <abbr title=\"World Wide Web Consortium\">W3C</abbr>.</p>
 <ul>
 <li><code>item 1</code></li>

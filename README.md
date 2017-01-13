@@ -37,7 +37,7 @@ const html = parser(`**this is my text in bold**`);
 *[W3C]:  World Wide Web Consortium
 
 # Heading 1
-Lorem **ipsum** dolor _sit_ ++amet++.
+Lorem **ipsum** dolor _sit_ ++amet++ :D.
 
 The HTML ==specification== is maintained by the W3C.
 
