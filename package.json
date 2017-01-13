@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/PlatziDev/markdown.git"
   },
-  "keywords": [],
+  "keywords": ["markdown", "parser", "Platzi", "markdown-it"],
   "author": {
     "name": "Platzi Team",
     "email": "cursos@platzi.com",
