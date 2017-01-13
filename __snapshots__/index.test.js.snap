@@ -1,3 +1,5 @@
+exports[`test Platzi Flavored Markdown bad arguments 1`] = `"The markdown parser options must be an object."`;
+
 exports[`test Platzi Flavored Markdown parser 1`] = `
 "<figure><img src=\"https://static.platzi.com/static/images/logos/platzi@2x.png\" alt=\"Platzi Logo\" /></figure>
 <h1>Heading 1</h1>

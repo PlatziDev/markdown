@@ -1,9 +1,5 @@
 const createParser = require('./index.js');
 
-
-const parser = createParser();
-
-
 const markdown = `![Platzi Logo](https://static.platzi.com/static/images/logos/platzi@2x.png)
 
 *[HTML]: Hyper Text Markup Language
@@ -35,6 +31,13 @@ function greeting() {
 
 
 test('Platzi Flavored Markdown parser', () => {
+  const parser = createParser();
   const html = parser(markdown);
   expect(html).toMatchSnapshot();
+});
+
+test('Platzi Flavored Markdown bad arguments', () => {
+  expect(
+    () => createParser('fake options')
+  ).toThrowErrorMatchingSnapshot();
 });
