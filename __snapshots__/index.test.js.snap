@@ -1,0 +1,28 @@
+exports[`test Platzi Flavored Markdown parser 1`] = `
+"<h1>heading 1</h1>
+<h2>heading 2# Heading 1</h2>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+<p><strong>Lorem</strong> <em>ipsum</em> <ins>dolor</ins> <a href=\"https://platzi.com\" target=\"_blank\" rel=\"nofollow\">sit</a> amet.</p>
+<figure><img src=\"https://static.platzi.com/static/images/logos/platzi@2x.png\" alt=\"Platzi Logo\" /></figure>
+<ul>
+<li><code>item 1</code></li>
+<li>item 2</li>
+</ul>
+<ol>
+<li>item</li>
+<li>another item</li>
+</ol>
+<blockquote>
+<p>quote of text</p>
+</blockquote>
+<pre><code class=\"language-js\">function greeting() {
+	return \'hello world!\';
+}
+</code></pre>
+<p><div class=\"embed-responsive embed-responsive-16by9\"><iframe class=\"embed-responsive-item\" id=\"youtubeplayer\" type=\"text/html\" width=\"640\" height=\"390\" src=\"//www.youtube.com/embed/ajLJOhf-WdA\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></p>
+"
+`;
