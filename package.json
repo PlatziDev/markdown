@@ -1,5 +1,5 @@
 {
-  "name": "markdown",
+  "name": "@platzi/markdown",
   "version": "1.0.0",
   "description": "Platzi Flavored Markdown parser",
   "main": "index.js",
@@ -11,15 +11,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sergiodxa/markdown.git"
+    "url": "git+https://github.com/PlatziDev/markdown.git"
   },
   "keywords": [],
-  "author": "Sergio Daniel Xalambrí <sergio@xalambri.xyz> (https://sergio.xalambri.xyz/)",
+  "author": {
+    "name": "Platzi Team",
+    "email": "cursos@platzi.com",
+    "url": "http://github.com/PlatziDev"
+  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sergiodxa/markdown/issues"
+    "url": "https://github.com/PlatziDev/markdown/issues"
   },
-  "homepage": "https://github.com/sergiodxa/markdown#readme",
+  "homepage": "https://github.com/PlatziDev/markdown#readme",
   "devDependencies": {
     "jest": "18.1.0"
   },
