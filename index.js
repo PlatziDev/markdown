@@ -12,7 +12,7 @@ const deflist = require('markdown-it-deflist');
 const video = require('markdown-it-video');
 
 
-function createParser(options = {}) {
+function createParser(options) {
   if (typeof options !== 'object') {
     throw new TypeError('The markdown parser options must be an object.');
   }
