@@ -1,6 +1,31 @@
-exports[`test Platzi Flavored Markdown bad arguments 1`] = `"The markdown parser options must be an object."`;
+exports[`Platzi Flavored Markdown parser should break without an object as options 1`] = `"The markdown parser options must be an object."`;
 
-exports[`test Platzi Flavored Markdown parser 1`] = `
+exports[`Platzi Flavored Markdown parser should work with options 1`] = `
+"<figure><img src=\"https://static.platzi.com/static/images/logos/platzi@2x.png\" alt=\"Platzi Logo\" /></figure>
+<h1>Heading 1</h1>
+<p>Lorem <strong>ipsum</strong> dolor <em>sit</em> <ins>amet</ins> 😄.</p>
+<p>The <abbr title=\"Hyper Text Markup Language\">HTML</abbr> <mark>specification</mark> is maintained by the <abbr title=\"World Wide Web Consortium\">W3C</abbr>.</p>
+<ul>
+<li><code>item 1</code></li>
+<li>item 2</li>
+<li>item 3</li>
+</ul>
+<dl>
+<dt>Term 1</dt>
+<dd>Definition 1</dd>
+<dt>Term 2</dt>
+<dd>Definition 2a</dd>
+<dd>Definition 2b</dd>
+</dl>
+<pre><code class=\"language-js\">function greeting() {
+	return \'hello world!\';
+}
+</code></pre>
+<p><div class=\"embed-responsive embed-responsive-16by9\"><iframe class=\"embed-responsive-item\" id=\"youtubeplayer\" type=\"text/html\" width=\"640\" height=\"390\" src=\"//www.youtube.com/embed/ajLJOhf-WdA\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></p>
+"
+`;
+
+exports[`Platzi Flavored Markdown parser should work without options 1`] = `
 "<figure><img src=\"https://static.platzi.com/static/images/logos/platzi@2x.png\" alt=\"Platzi Logo\" /></figure>
 <h1>Heading 1</h1>
 <p>Lorem <strong>ipsum</strong> dolor <em>sit</em> <ins>amet</ins> 😄.</p>

@@ -30,14 +30,20 @@ function greeting() {
 @[youtube](ajLJOhf-WdA)`;
 
 
-test('Platzi Flavored Markdown parser', () => {
-  const parser = createParser();
-  const html = parser(markdown);
-  expect(html).toMatchSnapshot();
-});
+describe('Platzi Flavored Markdown parser', () => {
+  it('should work without options', () => {
+    expect(createParser()(markdown)).toMatchSnapshot();
+  });
 
-test('Platzi Flavored Markdown bad arguments', () => {
-  expect(
-    () => createParser('fake options')
-  ).toThrowErrorMatchingSnapshot();
+  it('should work with options', () => {
+    expect(createParser({
+      html: false,
+    })(markdown)).toMatchSnapshot();
+  });
+
+  it('should break without an object as options', () => {
+    expect(
+      () => createParser('fake options')
+    ).toThrowErrorMatchingSnapshot();
+  });
 });
