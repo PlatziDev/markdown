@@ -1,6 +1,6 @@
 {
   "name": "@platzi/markdown",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Platzi Flavored Markdown parser",
   "main": "index.js",
   "scripts": {
