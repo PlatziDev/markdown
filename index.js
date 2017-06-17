@@ -11,7 +11,6 @@ const abbr = require('markdown-it-abbr');
 const deflist = require('markdown-it-deflist');
 const video = require('markdown-it-video');
 
-
 function createParser(_options) {
   // default options
   let options;
@@ -27,14 +26,17 @@ function createParser(_options) {
 
   // Initialize the MD parser and apply plugins
   const parser = new MarkdownIt(
-    Object.assign({
-      html: false,
-      breaks: true,
-      linkify: true,
-      xhtmlOut: true,
-      typographer: true,
-      langPrefix: 'language-',
-    }, options)
+    Object.assign(
+      {
+        html: false,
+        breaks: true,
+        linkify: true,
+        xhtmlOut: true,
+        typographer: true,
+        langPrefix: 'language-',
+      },
+      options,
+    ),
   );
 
   parser.use(emoji);
@@ -54,6 +56,5 @@ function createParser(_options) {
     return parser.render(html);
   };
 }
-
 
 module.exports = createParser;
