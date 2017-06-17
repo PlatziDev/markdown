@@ -11,7 +11,7 @@ const abbr = require('markdown-it-abbr');
 const deflist = require('markdown-it-deflist');
 const video = require('markdown-it-video');
 
-function createParser(_options) {
+function createParser(_options, _extraPlugins) {
   // default options
   let options;
   if (typeof _options === 'undefined') {
@@ -20,8 +20,21 @@ function createParser(_options) {
     options = _options;
   }
 
+  // default extra plugins
+  let extraPlugins;
+  if (typeof _extraPlugins === 'undefined') {
+    extraPlugins = [];
+  } else {
+    extraPlugins = _extraPlugins;
+  }
+
+  // type validations
   if (typeof options !== 'object') {
     throw new TypeError('The markdown parser options must be an object.');
+  }
+
+  if (!Array.isArray(extraPlugins)) {
+    throw new TypeError('The parser extra plugins must be an array.');
   }
 
   // Initialize the MD parser and apply plugins
@@ -51,6 +64,15 @@ function createParser(_options) {
   parser.use(abbr);
   parser.use(deflist);
   parser.use(video, options.video || {});
+
+  // apply extra plugins
+  extraPlugins.forEach(extraPlugin => {
+    if (Array.isArray(extraPlugin)) {
+      const [plugin, config] = extraPlugin;
+      return parser.use(plugin, config || {});
+    }
+    parser.use(extraPlugin);
+  });
 
   return function parse(html) {
     return parser.render(html);
