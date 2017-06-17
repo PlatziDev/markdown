@@ -29,21 +29,20 @@ function greeting() {
 
 @[youtube](ajLJOhf-WdA)`;
 
-
 describe('Platzi Flavored Markdown parser', () => {
   it('should work without options', () => {
     expect(createParser()(markdown)).toMatchSnapshot();
   });
 
   it('should work with options', () => {
-    expect(createParser({
-      html: false,
-    })(markdown)).toMatchSnapshot();
+    expect(
+      createParser({
+        html: false,
+      })(markdown),
+    ).toMatchSnapshot();
   });
 
   it('should break without an object as options', () => {
-    expect(
-      () => createParser('fake options')
-    ).toThrowErrorMatchingSnapshot();
+    expect(() => createParser('fake options')).toThrowErrorMatchingSnapshot();
   });
 });
