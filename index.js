@@ -67,15 +67,17 @@ function createParser(_options, _extraPlugins) {
   parser.use(video, options.video || {})
   parser.use(podcast, options.podcast || {})
 
-  // apply extra plugins
-  extraPlugins.forEach(function applyPlugin(extraPlugin) {
+  function applyPlugin(extraPlugin) {
     if (Array.isArray(extraPlugin)) {
-      const plugin = extraPlugin.plugin
-      const config = extraPlugin.config
+      const plugin = extraPlugin[0]
+      const config = extraPlugin[1]
       return parser.use(plugin, config || {})
     }
     parser.use(extraPlugin)
-  })
+  }
+
+  // apply extra plugins
+  extraPlugins.forEach(applyPlugin)
 
   return function parse(html) {
     return parser.render(html)
