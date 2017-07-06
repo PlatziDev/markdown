@@ -68,9 +68,10 @@ function createParser(_options, _extraPlugins) {
   parser.use(podcast, options.podcast || {})
 
   // apply extra plugins
-  extraPlugins.forEach(extraPlugin => {
+  extraPlugins.forEach(function applyPlugin(extraPlugin) {
     if (Array.isArray(extraPlugin)) {
-      const [plugin, config] = extraPlugin
+      const plugin = extraPlugin.plugin
+      const config = extraPlugin.config
       return parser.use(plugin, config || {})
     }
     parser.use(extraPlugin)
