@@ -1,5 +1,5 @@
-const createParser = require('./index.js');
-const math = require('markdown-it-math');
+const createParser = require('./index.js')
+const math = require('markdown-it-math')
 
 const markdown = `![Platzi Logo](https://static.platzi.com/static/images/logos/platzi@2x.png)
 
@@ -28,7 +28,9 @@ function greeting() {
 }
 \`\`\`
 
-@[youtube](ajLJOhf-WdA)`;
+@S[soundcloud](https://soundcloud.com/platziteam/la-historia-de-platzi)
+
+@[youtube](ajLJOhf-WdA)`
 
 const markdownWithMath = `Pythagoran theorem is $$a^2 + b^2 = c^2$$.
 
@@ -36,26 +38,26 @@ Bayes theorem:
 
 $$$
 P(A | B) = (P(B | A)P(A)) / P(B)
-$$$`;
+$$$`
 
 describe('Platzi Flavored Markdown parser', () => {
   it('should work without arguments', () => {
-    expect(createParser()(markdown)).toMatchSnapshot();
-  });
+    expect(createParser()(markdown)).toMatchSnapshot()
+  })
 
   describe('Options test', () => {
     it('should work with options', () => {
       expect(
         createParser({
           html: false,
-        })(markdown),
-      ).toMatchSnapshot();
-    });
+        })(markdown)
+      ).toMatchSnapshot()
+    })
 
     it('should break without an object as options', () => {
-      expect(() => createParser('fake options')).toThrowErrorMatchingSnapshot();
-    });
-  });
+      expect(() => createParser('fake options')).toThrowErrorMatchingSnapshot()
+    })
+  })
 
   describe('Extra plugins test', () => {
     it('should work with extra plugins', () => {
@@ -68,12 +70,12 @@ describe('Platzi Flavored Markdown parser', () => {
               inlineOpen: '$$',
             },
           ],
-        ])(markdownWithMath),
-      ).toMatchSnapshot();
-    });
+        ])(markdownWithMath)
+      ).toMatchSnapshot()
+    })
 
     it('should break without an array as extra plugins', () => {
-      expect(() => createParser(undefined, 'fake extra plugins')).toThrowErrorMatchingSnapshot();
-    });
-  });
-});
+      expect(() => createParser(undefined, 'fake extra plugins')).toThrowErrorMatchingSnapshot()
+    })
+  })
+})
