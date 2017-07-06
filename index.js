@@ -14,7 +14,7 @@ const podcast = require('markdown-it-podcast')
 
 function createParser(_options, _extraPlugins) {
   // default options
-  let options
+  var options
   if (typeof _options === 'undefined') {
     options = {}
   } else {
@@ -22,7 +22,7 @@ function createParser(_options, _extraPlugins) {
   }
 
   // default extra plugins
-  let extraPlugins
+  var extraPlugins
   if (typeof _extraPlugins === 'undefined') {
     extraPlugins = []
   } else {
