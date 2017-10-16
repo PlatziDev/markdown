@@ -11,6 +11,7 @@ const deflist = require('markdown-it-deflist')
 const video = require('markdown-it-video')
 const podcast = require('markdown-it-podcast')
 const codesandbox = require('markdown-it-codesandbox')
+const mentions = require('markdown-it-mentions')
 
 function createParser(_options, _extraPlugins) {
   // default options
@@ -66,6 +67,7 @@ function createParser(_options, _extraPlugins) {
   parser.use(video, options.video || {})
   parser.use(podcast, options.podcast || {})
   parser.use(codesandbox)
+  parser.use(mentions, options.mentions || {})
 
   function applyPlugin(extraPlugin) {
     if (Array.isArray(extraPlugin)) {
