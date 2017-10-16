@@ -1712,6 +1712,12 @@ markdown-it-abbr@1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/markdown-it-abbr/-/markdown-it-abbr-1.0.4.tgz#d66b5364521cbb3dd8aa59dadfba2fb6865c8fd8"
 
+markdown-it-codesandbox@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/markdown-it-codesandbox/-/markdown-it-codesandbox-1.0.1.tgz#4c03acfcdb4f646a8785cafb6f61dcc01aa0d3f0"
+  dependencies:
+    markdown-it-regexp "^0.4.0"
+
 markdown-it-deflist@2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/markdown-it-deflist/-/markdown-it-deflist-2.0.2.tgz#33253190400dfa5398bef9d0adacac0d0676bc58"
@@ -1745,6 +1751,10 @@ markdown-it-math@^4.0.1:
 markdown-it-podcast@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/markdown-it-podcast/-/markdown-it-podcast-0.1.0.tgz#634e47a73ca738d657df7186e82e1569ee0ecc92"
+
+markdown-it-regexp@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/markdown-it-regexp/-/markdown-it-regexp-0.4.0.tgz#d64d713eecec55ce4cfdeb321750ecc099e2c2dc"
 
 markdown-it-video@0.4.0:
   version "0.4.0"
