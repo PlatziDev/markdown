@@ -67,7 +67,11 @@ function createParser(_options, _extraPlugins) {
   parser.use(video, options.video || {})
   parser.use(podcast, options.podcast || {})
   parser.use(codesandbox)
-  parser.use(mentions, options.mentions || {})
+  parser.use(mentions, options.mentions || {
+    parseURL: function parseURL(username) {
+      return 'https://platzi.com/@' + username;
+    }
+  })
 
   function applyPlugin(extraPlugin) {
     if (Array.isArray(extraPlugin)) {
