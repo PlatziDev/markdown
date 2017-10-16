@@ -1,42 +1,42 @@
-const MarkdownIt = require('markdown-it')
+const MarkdownIt = require('markdown-it');
 
 // markdown-it plugins
-const emoji = require('markdown-it-emoji')
-const linkAttributes = require('markdown-it-link-attributes')
-const implicitFigures = require('markdown-it-implicit-figures')
-const mark = require('markdown-it-mark')
-const ins = require('markdown-it-ins')
-const abbr = require('markdown-it-abbr')
-const deflist = require('markdown-it-deflist')
-const video = require('markdown-it-video')
-const podcast = require('markdown-it-podcast')
-const codesandbox = require('markdown-it-codesandbox')
-const mentions = require('markdown-it-mentions')
+const emoji = require('markdown-it-emoji');
+const linkAttributes = require('markdown-it-link-attributes');
+const implicitFigures = require('markdown-it-implicit-figures');
+const mark = require('markdown-it-mark');
+const ins = require('markdown-it-ins');
+const abbr = require('markdown-it-abbr');
+const deflist = require('markdown-it-deflist');
+const video = require('markdown-it-video');
+const podcast = require('markdown-it-podcast');
+const codesandbox = require('markdown-it-codesandbox');
+const mentions = require('markdown-it-mentions');
 
 function createParser(_options, _extraPlugins) {
   // default options
-  var options
+  var options;
   if (typeof _options === 'undefined') {
-    options = {}
+    options = {};
   } else {
-    options = _options
+    options = _options;
   }
 
   // default extra plugins
-  var extraPlugins
+  var extraPlugins;
   if (typeof _extraPlugins === 'undefined') {
-    extraPlugins = []
+    extraPlugins = [];
   } else {
-    extraPlugins = _extraPlugins
+    extraPlugins = _extraPlugins;
   }
 
   // type validations
   if (typeof options !== 'object') {
-    throw new TypeError('The markdown parser options must be an object.')
+    throw new TypeError('The markdown parser options must be an object.');
   }
 
   if (!Array.isArray(extraPlugins)) {
-    throw new TypeError('The parser extra plugins must be an array.')
+    throw new TypeError('The parser extra plugins must be an array.');
   }
 
   // Initialize the MD parser and apply plugins
@@ -48,46 +48,49 @@ function createParser(_options, _extraPlugins) {
         linkify: true,
         xhtmlOut: true,
         typographer: true,
-        langPrefix: 'language-',
+        langPrefix: 'language-'
       },
       options
     )
-  )
+  );
 
-  parser.use(emoji)
+  parser.use(emoji);
   parser.use(linkAttributes, {
     target: '_blank',
-    rel: 'nofollow',
-  })
-  parser.use(implicitFigures, options.figures || {})
-  parser.use(mark)
-  parser.use(ins)
-  parser.use(abbr)
-  parser.use(deflist)
-  parser.use(video, options.video || {})
-  parser.use(podcast, options.podcast || {})
-  parser.use(codesandbox)
-  parser.use(mentions, options.mentions || {
-    parseURL: function parseURL(username) {
-      return 'https://platzi.com/@' + username;
+    rel: 'nofollow'
+  });
+  parser.use(implicitFigures, options.figures || {});
+  parser.use(mark);
+  parser.use(ins);
+  parser.use(abbr);
+  parser.use(deflist);
+  parser.use(video, options.video || {});
+  parser.use(podcast, options.podcast || {});
+  parser.use(codesandbox);
+  parser.use(
+    mentions,
+    options.mentions || {
+      parseURL: function parseURL(username) {
+        return 'https://platzi.com/@' + username;
+      }
     }
-  })
+  );
 
   function applyPlugin(extraPlugin) {
     if (Array.isArray(extraPlugin)) {
-      const plugin = extraPlugin[0]
-      const config = extraPlugin[1]
-      return parser.use(plugin, config || {})
+      const plugin = extraPlugin[0];
+      const config = extraPlugin[1];
+      return parser.use(plugin, config || {});
     }
-    parser.use(extraPlugin)
+    parser.use(extraPlugin);
   }
 
   // apply extra plugins
-  extraPlugins.forEach(applyPlugin)
+  extraPlugins.forEach(applyPlugin);
 
   return function parse(html) {
-    return parser.render(html)
-  }
+    return parser.render(html);
+  };
 }
 
-module.exports = createParser
+module.exports = createParser;
