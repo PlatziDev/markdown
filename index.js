@@ -58,7 +58,7 @@ function createParser(_options, _extraPlugins) {
     target: '_blank',
     rel: 'nofollow',
   })
-  parser.use(implicitFigures)
+  parser.use(implicitFigures, options.figures || {})
   parser.use(mark)
   parser.use(ins)
   parser.use(abbr)
