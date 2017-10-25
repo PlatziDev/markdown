@@ -1,8 +1,5 @@
 const MarkdownIt = require('markdown-it')
-
-// markdown-it plugins
 const emoji = require('markdown-it-emoji')
-// const checkbox = require('markdown-it-task-checkbox');
 const linkAttributes = require('markdown-it-link-attributes')
 const implicitFigures = require('markdown-it-implicit-figures')
 const mark = require('markdown-it-mark')
@@ -56,8 +53,10 @@ function createParser(_options, _extraPlugins) {
   parser.use(emoji)
   // parser.use(checkbox);
   parser.use(linkAttributes, {
-    target: '_blank',
-    rel: 'nofollow noopener',
+    attrs: {
+      target: '_blank',
+      rel: 'nofollow noopener',
+    }
   })
   parser.use(implicitFigures)
   parser.use(mark)
@@ -79,9 +78,11 @@ function createParser(_options, _extraPlugins) {
   // apply extra plugins
   extraPlugins.forEach(applyPlugin)
 
-  return function parse(html) {
+  function parse(html) {
     return parser.render(html)
   }
+
+  return parse;
 }
 
 module.exports = createParser
