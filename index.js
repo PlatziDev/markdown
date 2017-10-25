@@ -57,7 +57,7 @@ function createParser(_options, _extraPlugins) {
   // parser.use(checkbox);
   parser.use(linkAttributes, {
     target: '_blank',
-    rel: 'nofollow',
+    rel: 'nofollow noopener',
   })
   parser.use(implicitFigures)
   parser.use(mark)

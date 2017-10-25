@@ -1728,9 +1728,9 @@ markdown-it-ins@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/markdown-it-ins/-/markdown-it-ins-2.0.0.tgz#a5aa6a30f1e2f71e9497567cfdff40f1fde67483"
 
-markdown-it-link-attributes@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/markdown-it-link-attributes/-/markdown-it-link-attributes-1.0.0.tgz#8da1ca1729f0fa16c65615b0b1075b79c8371a2e"
+markdown-it-link-attributes@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/markdown-it-link-attributes/-/markdown-it-link-attributes-2.0.0.tgz#24803e7a2331c54cbd1450b8b03dc7f5f89a3c27"
 
 markdown-it-mark@2.0.0:
   version "2.0.0"
