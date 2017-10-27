@@ -1,17 +1,17 @@
-const MarkdownIt = require('markdown-it');
+var MarkdownIt = require('markdown-it');
 
 // markdown-it plugins
-const emoji = require('markdown-it-emoji');
-const linkAttributes = require('markdown-it-link-attributes');
-const implicitFigures = require('markdown-it-implicit-figures');
-const mark = require('markdown-it-mark');
-const ins = require('markdown-it-ins');
-const abbr = require('markdown-it-abbr');
-const deflist = require('markdown-it-deflist');
-const video = require('markdown-it-video');
-const podcast = require('markdown-it-podcast');
-const codesandbox = require('markdown-it-codesandbox');
-const mentions = require('markdown-it-mentions');
+var emoji = require('markdown-it-emoji');
+var linkAttributes = require('markdown-it-link-attributes');
+var implicitFigures = require('markdown-it-implicit-figures');
+var mark = require('markdown-it-mark');
+var ins = require('markdown-it-ins');
+var abbr = require('markdown-it-abbr');
+var deflist = require('markdown-it-deflist');
+var video = require('markdown-it-video');
+var podcast = require('markdown-it-podcast');
+var codesandbox = require('markdown-it-codesandbox');
+var mentions = require('markdown-it-mentions');
 
 function createParser(_options, _extraPlugins) {
   // default options
@@ -40,7 +40,7 @@ function createParser(_options, _extraPlugins) {
   }
 
   // Initialize the MD parser and apply plugins
-  const parser = new MarkdownIt(
+  var parser = new MarkdownIt(
     Object.assign(
       {
         html: false,
@@ -55,10 +55,18 @@ function createParser(_options, _extraPlugins) {
   );
 
   parser.use(emoji);
-  parser.use(linkAttributes, {
-    target: '_blank',
-    rel: 'nofollow'
-  });
+  parser.use(
+    linkAttributes,
+    Object.assign(
+      {
+        attrs: {
+          target: '_blank',
+          rel: 'nofollow noopener'
+        }
+      },
+      options.links || {}
+    )
+  );
   parser.use(implicitFigures, options.figures || {});
   parser.use(mark);
   parser.use(ins);
@@ -69,11 +77,14 @@ function createParser(_options, _extraPlugins) {
   parser.use(codesandbox);
   parser.use(
     mentions,
-    options.mentions || {
-      parseURL: function parseURL(username) {
-        return 'https://platzi.com/@' + username;
-      }
-    }
+    Object.assign(
+      {
+        parseURL: function parseURL(username) {
+          return 'https://platzi.com/@' + username;
+        }
+      },
+      options.mentions || {}
+    )
   );
 
   function applyPlugin(extraPlugin) {
@@ -88,9 +99,11 @@ function createParser(_options, _extraPlugins) {
   // apply extra plugins
   extraPlugins.forEach(applyPlugin);
 
-  return function parse(html) {
+  function parse(html) {
     return parser.render(html);
-  };
+  }
+
+  return parse;
 }
 
 module.exports = createParser;

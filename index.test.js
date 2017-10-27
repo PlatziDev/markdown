@@ -30,7 +30,10 @@ function greeting() {
 
 @S[soundcloud](https://soundcloud.com/platziteam/la-historia-de-platzi)
 
-@[youtube](ajLJOhf-WdA)`;
+@[youtube](ajLJOhf-WdA)
+
+[platzi](http://platzi.com/)
+`;
 
 const markdownWithMath = `Pythagoran theorem is $$a^2 + b^2 = c^2$$.
 
@@ -43,6 +46,11 @@ $$$`;
 describe('Platzi Flavored Markdown parser', () => {
   it('should work without arguments', () => {
     expect(createParser()(markdown)).toMatchSnapshot();
+  });
+
+  it('should have link with attr noopener', () => {
+    const html = createParser()(markdown);
+    expect(html.indexOf('rel="nofollow noopener"') !== -1).toBe(true);
   });
 
   describe('Options test', () => {
