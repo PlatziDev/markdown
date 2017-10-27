@@ -9,7 +9,7 @@ var ins = require('markdown-it-ins');
 var abbr = require('markdown-it-abbr');
 var deflist = require('markdown-it-deflist');
 var video = require('markdown-it-video');
-var podcast = require('markdown-it-podcast');
+// var podcast = require('markdown-it-podcast');
 var codesandbox = require('markdown-it-codesandbox');
 var mentions = require('markdown-it-mentions');
 
@@ -73,7 +73,7 @@ function createParser(_options, _extraPlugins) {
   parser.use(abbr);
   parser.use(deflist);
   parser.use(video, options.video || {});
-  parser.use(podcast, options.podcast || {});
+  // parser.use(podcast, options.podcast || {});
   parser.use(codesandbox);
   parser.use(
     mentions,
